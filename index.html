@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7f0">
+  <title>応援スタイル診断</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">SUPPORTER STYLE CHECK</p>
+      <h1 id="page-title">応援スタイル診断</h1>
+      <p class="intro">8つの質問から、あなたらしい応援のあり方を見つけます。</p>
+    </section>
+
+    <section class="diagnosis-card" aria-live="polite">
+      <div class="progress-area" aria-label="診断の進捗">
+        <span id="step-label">QUESTION 1 / 8</span>
+        <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+      </div>
+
+      <div id="question-view">
+        <p class="question-kicker" id="question-kicker">大切にしたいこと</p>
+        <h2 id="question-text">応援で一番大事なのは、どちらに近い？</h2>
+        <div class="answers" id="answers"></div>
+      </div>
+
+      <div id="result-view" hidden>
+        <p class="question-kicker">YOUR SUPPORTER STYLE</p>
+        <div class="result-mark" id="result-letter" aria-hidden="true"></div>
+        <h2 id="result-name"></h2>
+        <p class="result-copy" id="result-copy"></p>
+        <div class="result-traits" id="result-traits"></div>
+        <section class="score-section" aria-labelledby="score-title">
+          <h3 id="score-title">あなたの診断チャート</h3>
+          <div class="score-numbers">
+            <div><span>同調</span><strong id="alignment-score"></strong></div>
+            <div><span>表現</span><strong id="expression-score"></strong></div>
+          </div>
+          <div class="chart" role="img" aria-label="横軸が表現、縦軸が同調の診断チャート">
+            <span class="axis-top">同調が強い</span>
+            <span class="axis-bottom">同調が弱い</span>
+            <span class="axis-left">表現が弱い</span>
+            <span class="axis-right">表現が強い</span>
+            <div class="chart-grid"></div>
+            <span class="chart-label top-left"></span>
+            <span class="chart-label top-right"></span>
+            <span class="chart-label bottom-left"></span>
+            <span class="chart-label bottom-right"></span>
+            <span class="chart-point" id="chart-point" aria-hidden="true">●</span>
+          </div>
+        </section>
+        <button class="restart" type="button" id="restart-button">もう一度診断する</button>
+      </div>
+    </section>
+
+    <p class="note">深く考えすぎず、今の気持ちに近い度合いを選んでください。</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
